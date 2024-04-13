@@ -1,0 +1,90 @@
+Desarrollo
+1. Ide: https://spring.io/tools, 
+2. Repo Configuraciones: https://git-scm.com/ 
+3: DB-Relacional : https://www.postgresql.org/download/
+4. Trazabilidad: 
+    4.1 https://zipkin.io/pages/quickstart 
+    4.2 https://search.maven.org/remote_content?g=io.zipkin&a=zipkin-server&v=LATEST&c=exec
+
+5: OpenJDK17: https://jdk.java.net/archive/
+6: Creación: https://start.spring.io/
+7. Saas : https://www.cloudamqp.com/
+8. https://github.com/brettwooldridge/HikariCP
+9. https://downloads.apache.org/kafka/3.5.0/kafka_2.12-3.5.0.tgz
+10.https://springdoc.org/
+11.https://swagger.io/docs/
+12.https://www.mongodb.com/try/download/community
+
+----------------------------------
+git
+------------
+$ cd $HOME
+$ git init .
+$ git add -A .
+$ git commit -m "Add application.properties"
+
+----------------------------------
+
+
+Trazabilidad
+-----------
+$ set RABBIT_URI=<uri_protocolo_amq>
+$ java -jar <name_jar_zipkin>
+
+wget
+----
+https://eternallybored.org/misc/wget/
+
+
+JDK1.7 enviroment
+-----------------
+set path=C:\Program Files\Java\jdk-17.0.2\bin
+
+
+
+MQ SAAS: Middleware para envios tramas de trazabilidad. https://www.cloudamqp.com/
+--------------------------------
+  $ set RABBIT_URI=amqps://angpcmnf:BI6gmMOad_NfXNjL3VN1Ne1uP-hMS4gK@moose.rmq.cloudamqp.com/angpcmnf
+  - address(DNS load balanced): moose.rmq.cloudamqp.com
+  - User: angpcmnf
+  - password: BI6gmMOad_NfXNjL3VN1Ne1uP-hMS4gK
+  - amqps: amqps://angpcmnf:BI6gmMOad_NfXNjL3VN1Ne1uP-hMS4gK@moose.rmq.cloudamqp.com/angpcmnf
+  - Ports: 5672 (5671 for TLS)
+
+BALANCING
+--------------
+1. Fijar el jdk1.7.x set path=C:\Program Files\Java\jdk-17.0.2\bin
+2. load balancing, java -jar spring-cloud-ms-register-discover-0.0.1.jar 
+3. validar servicio: http://localhost:8761/
+
+CONFIG SERVER
+--------------
+1. Fijar el jdk1.7.x set path=C:\Program Files\Java\jdk-17.0.2\bin
+2. Load config server, java -jar -Dspring.cloud.config.server.git.uri=file:///proyectos//capacitacion//MSTR//components_base//git-config-repo spring-cloud-ms-config-server-0.0.1.jar
+3. validar servicio: http://localhost:8888/spring-cloud-ms-abono/dev
+4. user: usernameconfig password: passwdconfig
+
+
+TRAZABILIDAD
+---------------
+WINDOWS
+$ set RABBIT_URI=amqps://gjgrsdtp:5f4eUgQidoikng1WCSAulYuPj7tKT5Kq@fish.rmq.cloudamqp.com/gjgrsdtp
+$ java -jar zipkin-server-2.24.0-exec.jar
+
+MAC
+export RABBIT_URI=amqps://gjgrsdtp:5f4eUgQidoikng1WCSAulYuPj7tKT5Kq@fish.rmq.cloudamqp.com/gjgrsdtp
+$ java -jar zipkin-server-2.24.0-exec.jar
+
+LINUX
+export RABBIT_URI=amqps://gjgrsdtp:5f4eUgQidoikng1WCSAulYuPj7tKT5Kq@fish.rmq.cloudamqp.com/gjgrsdtp
+$ java -jar zipkin-server-2.24.0-exec.jar
+
+
+
+
+
+
+
+
+
+

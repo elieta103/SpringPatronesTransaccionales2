@@ -1,0 +1,29 @@
+1-descarga
+https://www.apache.org/dyn/closer.cgi?path=/kafka/2.6.0/kafka_2.13-2.6.0.tgz
+
+
+2-Ingresar a Zookeper: gestiona el cluster
+- Ejecutar: C:\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+  imagen zookeeper-start     arranca en el puerto 2181
+
+3-Arrancar Kafka..
+ -C:\kafka>.\bin\windows\kafka-server-start.bat .\config\server.properties
+   kafka-start     arranca en el puerto 9092
+  
+  -ver list topic en zookeeper : c:\kafka>.\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --list
+
+  -crear topico: c:\kafka>.\bin\windows\kafka-topics.bat --create --topic test --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1
+
+  -ver detalle del topic: kafka-topics.bat --describe --bootstrap-server localhost:9092 --topic [Topic Name]
+       c:\kafka>.\bin\windows\kafka-topics.bat --describe --bootstrap-server localhost:9092 --topic test
+
+
+ CREANDO UN CONSUMIDOR vamos a validar los componentes creando un consumidor para validar lo que vamos publicar en un topic
+    C:\kafka\bin>.\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
+	
+	--bootstrap-server , define el server donde se va a consumir los mensajes. Nuestro caso localhost:9092
+	--topic connect-test , se define el tópico sobre la cual vamos a trabajar
+	--from-beginning, se de desde el inicio
+	
+ CREANDO productorc:\kafka>.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test
+      lanzar strin y luego bajarllo

@@ -1,0 +1,55 @@
+0. Generales
+=========================================================
+Group: com.bsoftgroup
+Artifact: spring-ms-<nombre_asociado_responsabilidad_Componente>
+
+
+<nombre_asociado_responsabilidad_Componente>: saga-orchestration, saga-orchestration-abono, saga-orchestration-cargo
+
+Spring Web WEB
+Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+
+Integración http
+-------------------
+OpenFeign SPRING CLOUD ROUTING
+Declarative REST Client. OpenFeign creates a dynamic implementation of an interface decorated with JAX-RS or Spring MVC annotations.
+
+
+Configuraciones
+---------------
+Config Client SPRING CLOUD CONFIG
+Client that connects to a Spring Cloud Config Server to fetch the application's configuration.
+
+Balacing
+-------------
+Eureka Discovery Client SPRING CLOUD DISCOVERY
+A REST based service for locating services for the purpose of load balancing and failover of middle-tier servers.
+
+PostgreSQL Driver SQL
+---------------------
+A JDBC and R2DBC driver that allows Java programs to connect to a PostgreSQL database using standard, database independent Java code.
+
+Spring Data JDBC SQL
+---------------------
+Persist data in SQL stores with plain JDBC using Spring Data.
+
+
+Trazabilidad
+-------------
+Spring for RabbitMQ MESSAGING
+Gives your applications a common platform to send and receive messages, and your messages a safe place to live until received.
+
+Zipkin OBSERVABILITY
+Enable and expose span and trace IDs to Zipkin.
+
+Distributed Tracing OBSERVABILITY
+Enable span and trace IDs in logs.
+
+Developers
+------------
+Spring Boot DevTools DEVELOPER TOOLS
+Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+
+Spring Configuration Processor DEVELOPER TOOLS
+Generate metadata for developers to offer contextual help and "code completion" when working with custom configuration keys (ex.application.properties/.yml files).
+

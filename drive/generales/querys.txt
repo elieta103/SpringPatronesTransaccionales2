@@ -1,0 +1,7 @@
+select * from esq_ctas_clientes.TBL_CUENTAS;
+select * from esq_ctas_clientes.TBL_MOVIMIENTOS order by transaccion DESC
+
+select * from esq_ctas_recaudadoras.TBL_CUENTAS;
+select * from esq_ctas_recaudadoras.TBL_MOVIMIENTOS order by transaccion DESC
+
+

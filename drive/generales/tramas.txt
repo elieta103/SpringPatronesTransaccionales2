@@ -1,0 +1,77 @@
+10 MS-CARGO
+------------------
+
+http://localhost:8071/mscargo/procesar/cargo/to/client
+POST
+{
+	"cuenta":"11205060709500",
+	"monto":2.00,
+        "cliente":"15865658",
+	"causal":"PAGO TELEFONO",
+	"acreedor":"20602649412",
+        "transaccion":"09999"	
+}
+
+11 - MS-ABONO
+----------------------
+http://localhost:8061/msabono/procesar/abono/to/recaudador
+POST
+{
+	"cuenta":"11206060709890",
+	"monto":2.00,
+        "cliente":"20602649412",
+        "transaccion":"09999",
+	"causal":"PAGO TELEFONO",
+	"pagador":"15865658"
+        	
+}
+
+12 MS-PAGO | MS-COMMAND | MS-SAGA-ORQ | MS-SAGA-COR
+-----------------
+http://localhost:9070/mspago/procesar/cargo/abono
+POST
+{
+	"cuentacargo":"11205060709500",
+	"cuentaabono":"11206060709890",
+	"monto":2.00,
+	"causal":"PAGO TELEFONO",
+	"pagador":"15865658",
+    "acreedor":"20602649412"	
+}
+swagger
+http://server:port/context-path/swagger-ui.html
+
+http://localhost:8073/mspago/swagger-ui.html
+mstr
+http://localhost:9070/mspago/swagger-ui.html
+
+
+
+REVERSA ABONO
+-------------
+http://localhost:8089/msreversa/abono/idtransaccion/{transaccion}
+
+
+
+
+13 MSB-PAGO
+http://localhost:8074/msbpago/procesar/cargo/abono
+POST
+{
+	"cuentacargo":"11205060709500",
+	"cuentaabono":"11206060709890",
+	"monto":2.00,
+	"causal":"PAGO TELEFONO",
+	"pagador":"15865658",
+    "acreedor":"20602649412"	
+}
+
+
+COMMAND-QUERY
+----------------
+http://localhost:9401/mscqrsquery/obtener/pagos
+
+
+
+SWAGGER
+
